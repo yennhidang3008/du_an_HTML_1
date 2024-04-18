@@ -53,6 +53,21 @@ a {
   margin-right: auto;
 }
 
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: var(--line-clamp, 1);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp.line-2 {
+  --line-clamp: 2;
+}
+
+. {
+  word-break: break-all;
+}
+
 /* =================header================== */
 .header {
   background: #fffcf4;
@@ -329,6 +344,7 @@ a {
   border-radius: 12px;
   border: 1px solid #e2dfda;
   background: #fff;
+  flex: 1;
 }
 
 .popular .course-item:hover {
@@ -396,4 +412,78 @@ a {
   background-color: var(--primary-color);
   color: #fff;
   opacity: 1;
+}
+
+/* ==================feedback==================== */
+.feedback {
+  margin-top: 135px;
+  padding: 96px 0;
+  background: #2e2100;
+}
+
+.feedback-list {
+  display: flex;
+  overflow: hidden;
+  
+}
+
+.feedback-item {
+  width: 100%;
+  display: flex;
+  flex-shrink: 0;
+  /* transform: translateX(-100%); */
+  transition: all ease .5s;
+}
+
+.feedback-item .avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.feedback-item .info .member-name {
+  margin-top: 18px;
+  color: #f7f7f7;
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.42; /* 141.667% */
+}
+
+.feedback-item .info .desc {
+  margin-top: 4px;
+  color: #bfbcb2;
+  font-size: 1.4rem;
+  line-height: 1.86; /* 185.714% */
+}
+
+.feedback-item .dots {
+  display: flex;
+  margin-top: 28px;
+  gap: 6px;
+}
+
+.feedback-item .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  background: #634700;
+  cursor: pointer;
+}
+
+.feedback-item .dot.active {
+  background: var(--primary-color);
+  cursor: default;
+}
+
+.feedback-item .content {
+  width: 66%;
+  margin-left: auto;
+}
+.feedback-item blockquote {
+  color: #fff;
+  font-size: 2.6rem;
+  font-style: italic;
+  line-height: 1.54; /* 153.846% */
 }
